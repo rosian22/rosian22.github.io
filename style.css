@@ -134,6 +134,33 @@ a:focus-visible { outline: 2px solid var(--cyan); outline-offset: 3px; border-ra
   text-align: left;
 }
 
+.hero-grid {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 3rem;
+}
+
+.hero-text { flex: 1; min-width: 0; }
+
+.hero-photo { flex-shrink: 0; }
+
+.hero-photo img {
+  display: block;
+  width: clamp(180px, 22vw, 280px);
+  height: auto;
+  border-radius: 50%;
+  padding: 4px;
+  background: linear-gradient(135deg, var(--cyan), var(--violet));
+  box-shadow: 0 0 40px rgba(55, 230, 255, 0.22), 0 0 90px rgba(167, 139, 250, 0.16);
+}
+
+@media (max-width: 48rem) {
+  .hero-grid { flex-direction: column-reverse; align-items: stretch; gap: 2rem; }
+  .hero-photo { align-self: center; }
+  .hero-photo img { width: 160px; }
+}
+
 .hero-boot {
   color: var(--text-dim);
   font-size: 0.85rem;
